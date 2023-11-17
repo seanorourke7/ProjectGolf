@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://git.heroku.com/projectgolf.git', '8000-seanorourke7-projectgolf-85uzeabvkw.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['projectgolf-537a6c2d3f19.herokuapp.com', 'localhost',
+                 '8000-seanorourke7-projectgolf-85uzeabvkw.us2.codeanyapp.com']
 
 
 # Application definition
