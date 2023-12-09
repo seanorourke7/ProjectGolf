@@ -63,4 +63,15 @@
   </nav>
   {% endif %}
 </div>
+<div class="row">
+  <div class="col-md-4 card mb-4 mt-3">
+    <div class="card-body">
+      {% if user.is_authenticated %}
+      <h3>Create your own Post :</h3>
+      <a href="{% url 'postcreate' %}">Click Here !</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {%endblock%}
