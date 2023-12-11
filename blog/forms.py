@@ -13,3 +13,4 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('course_name', 'content',
                   'handicap', 'tees_played_off', 'featured_image')
+        

@@ -1,23 +1,18 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col card mb-4 mt-3 left top">
-      <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Create A Post:</h3>
-        <p>Posting as: {{ user.username }}</p>
+<div class="form-data">
+  {% if user.is_authenticated %}
+  <h3>Create A Post:</h3>
+  <p>Posting as: {{ user.username }}</p>
 
-        <form
-          action="{% url 'postcreate' %}"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          {{ form }} {% csrf_token %}
-          <input type="submit" value="Create" />
-        </form>
-      </div>
-    </div>
-  </div>
+  <form
+    action="{% url 'postcreate' %}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {{ form.as_p }} {% csrf_token %}
+    <input type="submit" value="Create" />
+  </form>
 </div>
+
 {% endif %} {%endblock%}
