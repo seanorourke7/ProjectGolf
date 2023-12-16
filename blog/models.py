@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
-STATUS = ((0, "Draft"), (1, "Published"))
+
 
 choices = [
     ('Abbeyleix Golf Club', 'Abbeyleix Golf Club'),
@@ -403,11 +404,13 @@ choices = [
 
 ]
 
+STATUS = ((0, "Draft"), (1, "Published"))
 
 class Post(models.Model):
     course_name = models.CharField(
         max_length=200, choices=choices, default='Abbeyleix Golf Club')
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, null=True,
+                            blank=True, unique=False)
     author = models.ForeignKey(
         User, default=None, on_delete=models.CASCADE, related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
@@ -416,7 +419,6 @@ class Post(models.Model):
     handicap = models.IntegerField(default=18)
     tees_played_off = models.CharField(max_length=10, default="white")
     created_on = models.DateTimeField(auto_now_add=True)
-
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
@@ -428,6 +430,10 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.course_name)
+        super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

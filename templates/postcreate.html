@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="form-data">
   {% if user.is_authenticated %}
@@ -11,8 +11,10 @@
     enctype="multipart/form-data"
   >
     {{ form.as_p }} {% csrf_token %}
-    <input type="submit" value="Create" />
+    <input type="submit" value="Create" class="alert alert-success" role="alert"/>
+        Your post will be submitted for approval. 
   </form>
+
 </div>
 
 {% endif %} {%endblock%}

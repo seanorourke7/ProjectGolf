@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
+from . import forms
 
 
 class PostList(generic.ListView):
@@ -67,30 +68,28 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    def post(self, request, slug):
-        post = get_object_or_404(Post, slug=slug)
+    def post(self, request, id):
+        post = get_object_or_404(Post, id=id)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('post_detail'))
 
 
 class PostCreate(View):
     def get(self, request):
-        if request.method == 'POST':
-            form = PostForm(request.POST, request.FILES)
-            if form.is_valid():
-                instance = form.save(commit=False)
-                instance.author = request.user
-                instance.save()
-                return HttpResponseRedirect('post_detail')
-
-        else:
-            form = PostForm()
+        form = forms.PostForm()
         return render(request, "postcreate.html", {'form': form})
 
     def post(self, request):
-        return HttpResponseRedirect(reverse('postcreate',))
+        form = forms.PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            return render(request, 'base.html')
+
+        return render(request, 'postcreate.html', {'form': form})
