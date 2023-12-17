@@ -91,5 +91,6 @@ class PostCreate(View):
             instance.author = request.user
             instance.save()
             return render(request, 'base.html')
+            
 
         return render(request, 'postcreate.html', {'form': form})

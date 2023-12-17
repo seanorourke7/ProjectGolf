@@ -4,7 +4,6 @@ from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 
 
-
 choices = [
     ('Abbeyleix Golf Club', 'Abbeyleix Golf Club'),
     ('Ardglass Golf Club', 'Ardglass Golf Club'),
@@ -417,7 +416,9 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     review = models.TextField(blank=True)
     handicap = models.IntegerField(default=18)
-    tees_played_off = models.CharField(max_length=10, default="white")
+    tees_played_off = models.CharField(max_length=10, default="White")
+    grossscore = models.IntegerField(default=72)
+    stableford = models.IntegerField(default=36)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)

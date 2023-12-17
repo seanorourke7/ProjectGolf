@@ -17,7 +17,7 @@
           width="100%"
         />
         {% else %}
-        <img src=" {{ post.featured_image.url }}" width="100%" />
+        <img src=" {{ post.featured_image.url }}" width="100%"/>
         {% endif %}
       </div>
     </div>
@@ -30,12 +30,14 @@
       <div class="card-body">
         <!-- The post content goes inside the card-text. -->
         <!-- Use the | safe filter inside the template tags -->
-        <p class="card-text">{{ post.content | safe }}</p>
-        <p class="card-text">Handicap Played off {{ post.handicap | safe }}</p>
-        <p class="card-text">
+        <p>{{ post.review | safe }}</p>
+        <p >Handicap Played off {{ post.handicap | safe }}</p>
+        <p >
           Tees Played off {{ post.tees_played_off | safe }} 
           
         </p>
+        <p >Gross Score {{ post.grossscore | safe }}</p>
+        <p >Stableford Points {{ post.stableford | safe }}</p>
 
         <div class="row">
           <div class="col-1">
