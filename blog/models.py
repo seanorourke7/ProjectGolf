@@ -410,7 +410,7 @@ class Post(models.Model):
     course_name = models.CharField(
         max_length=200, choices=choices, default='Abbeyleix Golf Club')
     slug = models.SlugField(max_length=200, null=True,
-                            blank=True, unique=False)
+                            blank=True, unique=True)
     author = models.ForeignKey(
         User, default=None, on_delete=models.CASCADE, related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
@@ -432,7 +432,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.course_name)
+        self.slug = slugify(self.id)
         super().save(*args, **kwargs)
 
 

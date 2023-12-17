@@ -11,10 +11,14 @@
     enctype="multipart/form-data"
   >
     {{ form.as_p }} {% csrf_token %}
-    <input type="submit" value="Create" class="alert alert-success" role="alert"/>
-        Your post will be submitted for approval. 
+    <input
+      type="submit"
+      value="Create"
+      class="alert alert-success"
+      role="alert"
+    />
+    Your post will be submitted for approval
   </form>
-
 </div>
 
 {% endif %} {%endblock%}
