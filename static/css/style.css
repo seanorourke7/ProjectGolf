@@ -143,3 +143,17 @@ body {
     background: transparent;
     border: none;
 }
+
+#footerlink {
+    text-decoration: none;
+    color: #fff;
+}
+
+#createlink {
+    text-decoration: none;
+    color: black;
+}
+
+#createlink:hover {
+    color: green;
+}

@@ -415,7 +415,7 @@ class Post(models.Model):
         User, default=None, on_delete=models.CASCADE, related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField(blank=True)
+    review = models.TextField(blank=True)
     handicap = models.IntegerField(default=18)
     tees_played_off = models.CharField(max_length=10, default="white")
     created_on = models.DateTimeField(auto_now_add=True)

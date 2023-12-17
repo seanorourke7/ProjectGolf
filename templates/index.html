@@ -68,10 +68,10 @@
     <div class="card-body">
       {% if user.is_authenticated %}
       <h3>Create your own Post :</h3>
-      <a href="{% url 'postcreate' %}">Click Here !</a>
+      <a href="{% url 'postcreate' %}" id="createlink">Click Here !<i class="fa-solid fa-golf-ball-tee"></i></a>
       {% endif %}
     </div>
   </div>
 </div>
-
+<script src="https://kit.fontawesome.com/c5692d6d7a.js" crossorigin="anonymous"></script>
 {%endblock%}
