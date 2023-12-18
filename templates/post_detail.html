@@ -14,10 +14,10 @@
         {% if "placeholder" in post.featured_image.url %}
         <img
           src="https://res.cloudinary.com/dwej6pult/image/upload/v1702034135/background_golf_zhplqx.jpg"
-          width="100%"
+          width="100%" alt="image of a golf course"
         />
         {% else %}
-        <img src=" {{ post.featured_image.url }}" width="100%"/>
+        <img src=" {{ post.featured_image.url }}" width="100%" alt="image uploaded by the post author"/>
         {% endif %}
       </div>
     </div>

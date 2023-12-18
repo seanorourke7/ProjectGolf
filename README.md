@@ -1,21 +1,11 @@
 # Seans Golf Adventures
 
-Seans Golf Adventures is a Blog about golf courses around Ireland. The idea is to post about your visit to a course and leave feedback. The models ask for specific information like the players handicap, tees played off and their score at the end of the round. The user as well as admin can post to it but only Admin can approve posts to be published. It encourages interaction through inviting the user to comment and like other peoples posts and to even submit a post themselves. 
+Seans Golf Adventures is a Blog about golf courses around Ireland. The idea is to post about your visit to a course and leave feedback. The models ask for specific information like the players handicap, tees played off and their score at the end of the round. The user as well as Admin can post to it but only Admin can approve posts to be published. It encourages interaction through inviting the user to comment and like other peoples posts and to even submit a post themselves.
 
-The live link can be found here: [Live Site - Seans Golf Adventures](https://projectgolf-537a6c2d3f19.herokuapp.com/)
-
-
-## Table of Contents
-
-
-![screenshot across differant device sizes](static/media/images/ScreenshotDesktop.png)
-
----
-
+The live link can be found here: [Live Site - Seans Golf Adventures](https://projectgolf-537a6
 ## CONTENTS
 
 - [Seans Golf Adventures](#seans-golf-adventures)
-  - [Table of Contents](#table-of-contents)
   - [CONTENTS](#contents)
   - [User Experience (UX)](#user-experience-ux)
     - [User Stories](#user-stories)
@@ -45,63 +35,62 @@ The live link can be found here: [Live Site - Seans Golf Adventures](https://pro
 
 ### User Stories
 
-First time visitors will
+First time visitors will be greeted with a well layed out and interesting website. The most recent 6 blog posts will be visible on the home page and then a simple navigation tool allows further browsing. Each blog post will have a picture either uploaded by the author or by default. 
+
+Upon registering user will be able to like and comment on posts and even submit their own posts to the blog. All comments and blog posts will be approved by Admin. 
 
 ## Design
 
 ### Colour Scheme
 
-The colour scheme is based on the background image of 
-
+The colour scheme is based on the background image of a golf course with each blog post photo sitting over this image. If there isn't a picture uploaded with the post a default image of a golf course will be provided. 
+The background is white and the text overlay is black giving simple but effective contrast. The Footer is the opposite with a dark background contrasting with light colored taxt. 
 
 
 ### Imagery
 
-Images used are a selection of 
+Images used are a selection of golf course images from pexels.com. If the post author doesn't include an image a default image of a golf course will show in it's place. 
 
 ### Wireframes
 
-I drew out a very simple wireframes with mockflow.
+I drew out a very simple wireframes with Uizard.
 
 
-![homepage wireframe](static/media/images/)
+![homepage wireframe](static/media/images/mockupgolf.png)
+![homepage wireframe](static/media/images/mockupgolf2.png)
 
 ## Features
 
-This site contains a home page with
+This site contains a home page with bog posts paginated by 6 with easy to navigate controls to reach more posts. 
+Users can register and log in to comment and like posts as well as submit their own posts. 
 
-![Homepage destop]()
+![Homepage destop](static/media/images/ScreenshotDesktop.png)
 
-![Homepage mobile]()
-
-
-
-![Game destop]()
-
-![Game mobile]()
+![Homepage mobile](static/media/images/Screenshothomemobile.png)
 
 
 
-![HowToPlay destop]()
+![Signup destop](static/media/images/Screenshotsignupdesktop.png)
+![Signup mobile](static/media/images/Screenshotsignupmobile.png)
 
-
-
-![How to play desktop]()
+![Create post desktop](static/media/images/Screenshotcreatepostdesktop.png)
+![Create post mobile](static/media/images/Screenshotcreatemobile.png)
 
 ### General features on each page
 
-There is a header that is consitant across the site and in
-
-![Header]()
-![Header]()
+There is a header and footer that are used across the site using django block content. 
+The user can navigate to the log in/logout/register page by clicking the burger icon on small screens or the login/logout/signup button on larger screens.
+The site logo "Seans Golf Adventures" also links to the home page.  
+Once logged in a user can create their own post by clicking on the Create Post button at the bottom of the home page. 
+The link in the footer leads to the creaters github profile. 
 
 ### Future Implementations
 
-I would like to add 
+I would like to add the ability to rate each course with stars. So each user can rate out of 5 stars their experience of each course.
 
 ### Accessibility
 
-All 
+All images and links used have aria labels and lighthouse scores the site above 90%. 
 
 ![Lighthouse]()
 

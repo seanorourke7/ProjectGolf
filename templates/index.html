@@ -14,6 +14,7 @@
                 <img
                   class="card-img-top"
                   src="https://images.pexels.com/photos/92858/pexels-photo-92858.jpeg?cs=srgb&dl=pexels-nathan-nedley-92858.jpg&fm=jpg"
+                  alt="default image of golf course"
                 />
                 {% else %}
                 <img
@@ -67,11 +68,19 @@
   <div class="col-md-4 card mb-4 mt-3">
     <div class="card-body">
       {% if user.is_authenticated %}
-      <h3>Create your own Post :  <a href="{% url 'postcreate' %}" id="createlink">Click Here <i class="fa-solid fa-golf-ball-tee"></i></a></h3>
-      
+      <h3>
+        Create your own Post :
+        <a href="{% url 'postcreate' %}" id="createlink"
+          >Click Here <i class="fa-solid fa-golf-ball-tee"></i
+        ></a>
+      </h3>
+
       {% endif %}
     </div>
   </div>
 </div>
-<script src="https://kit.fontawesome.com/c5692d6d7a.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/c5692d6d7a.js"
+  crossorigin="anonymous"
+></script>
 {%endblock%}
