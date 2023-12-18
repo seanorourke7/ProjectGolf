@@ -160,6 +160,8 @@ Testing was ongoing throughout the entire build using dev tools and running test
 
 There is currently a bug in that the slug of each post is the id of the post which is unique to each post. This allows multiple posts/reviews of the same golf course. However when the post is submitted for approval the slug is set to none in the Admin page and when it's approved the id needs to be manually entered into the slug field. This should be automatic. 
 
+The signup page is failing the W3C validator but as it's a direct import from Django I can't edit it. 
+
 ![W3C](assets/images/readme/html-valid.png)
 
 ## Credits
