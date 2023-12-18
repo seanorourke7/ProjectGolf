@@ -18,8 +18,7 @@
                 {% else %}
                 <img
                   class="card-img-top"
-                  src=" {{ post.featured_image.url }}" alt="image uploaded by author"
-                />
+                  src=" {{ post.featured_image.url }}" alt="image uploaded by author">
                 {% endif %}
                 <div class="image-flash">
                   <p class="author">Author: {{ post.author }}</p>
@@ -29,7 +28,7 @@
                 <h2 class="card-title">{{ post.course_name }}</h2>
                 <p class="card-text">{{ post.excerpt }}</p>
               </a>
-              <hr />
+              <hr>
               <p class="card-text text-muted h6">
                 {{ post.created_on }} <i class="far fa-heart"></i>
                 {{ post.number_of_likes }}
