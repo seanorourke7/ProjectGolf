@@ -14,12 +14,11 @@
                 <img
                   class="card-img-top"
                   src="https://images.pexels.com/photos/92858/pexels-photo-92858.jpeg?cs=srgb&dl=pexels-nathan-nedley-92858.jpg&fm=jpg"
-                  alt="default image of golf course"
-                />
+                  alt="default image of golf course">
                 {% else %}
                 <img
                   class="card-img-top"
-                  src=" {{ post.featured_image.url }}"
+                  src=" {{ post.featured_image.url }}" alt="image uploaded by author"
                 />
                 {% endif %}
                 <div class="image-flash">

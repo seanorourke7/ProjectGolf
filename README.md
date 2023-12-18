@@ -2,7 +2,9 @@
 
 Seans Golf Adventures is a Blog about golf courses around Ireland. The idea is to post about your visit to a course and leave feedback. The models ask for specific information like the players handicap, tees played off and their score at the end of the round. The user as well as Admin can post to it but only Admin can approve posts to be published. It encourages interaction through inviting the user to comment and like other peoples posts and to even submit a post themselves.
 
-The live link can be found here: [Live Site - Seans Golf Adventures](https://projectgolf-537a6
+The live link can be found here: 
+[Live Site - Seans Golf Adventures](https://projectgolf-537a6c2d3f19.herokuapp.com/)
+
 ## CONTENTS
 
 - [Seans Golf Adventures](#seans-golf-adventures)
@@ -44,7 +46,7 @@ Upon registering user will be able to like and comment on posts and even submit 
 ### Colour Scheme
 
 The colour scheme is based on the background image of a golf course with each blog post photo sitting over this image. If there isn't a picture uploaded with the post a default image of a golf course will be provided. 
-The background is white and the text overlay is black giving simple but effective contrast. The Footer is the opposite with a dark background contrasting with light colored taxt. 
+The background is white and the text overlay is black giving simple but effective contrast. The Footer is the opposite with a dark background contrasting with light colored text. 
 
 
 ### Imagery
@@ -92,9 +94,13 @@ I would like to add the ability to rate each course with stars. So each user can
 
 All images and links used have aria labels and lighthouse scores the site above 90%. 
 
-![Lighthouse]()
+![Lighthouse](static/media/images/lighthouse.png)
 
 ## Technologies Used
+
+ElephantSQL - for the database.
+
+Cloudinary - for image hosting. 
 
 Github - To save and store the files for the website.
 
@@ -106,12 +112,7 @@ Crispy Alerts - for the alert boxes.
 
 Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-Tiny PNG To compress images.
-
-Am I Responsive? To show the website image on a range of devices.
-
 Mockflow for the wireframe.
-
 
 
 ### Languages Used
@@ -153,17 +154,11 @@ Type 'git clone' into the terminal and then paste the link you copied in step 3.
 
 ## Testing
 
-Testing was ongoing throughout the entire build
+Testing was ongoing throughout the entire build using dev tools and running tests in the terminal window. 
 
 ## Bugs
 
-
-
-
-
-![JSHint](/assets/images/readme/jshint.png)
-
-![Jigsaw](/assets/images/readme/css-valid.png)
+There is currently a bug in that the slug of each post is the id of the post which is unique to each post. This allows multiple posts/reviews of the same golf course. However when the post is submitted for approval the slug is set to none in the Admin page and when it's approved the id needs to be manually entered into the slug field. This should be automatic. 
 
 ![W3C](assets/images/readme/html-valid.png)
 
