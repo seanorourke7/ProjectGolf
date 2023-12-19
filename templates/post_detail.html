@@ -90,6 +90,13 @@
       </div>
     </div>
   </div>
+  <div>
+    {% if user == post.author %}
+    <a href="{% url 'delete_post' post.pk %}">Delete Post</a>
+    {% endif %}
+    </div>
+
+
   <div class="row">
     <div class="col">
       <hr>

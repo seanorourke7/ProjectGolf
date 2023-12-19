@@ -162,7 +162,7 @@ There is currently a bug in that the slug of each post is the id of the post whi
 
 The signup page is failing the W3C validator but as it's a direct import from Django I can't edit it. 
 
-![W3C](assets/images/readme/html-valid.png)
+![W3C](static/media/images/w3csignup.png)
 
 ## Credits
 

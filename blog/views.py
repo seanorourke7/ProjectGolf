@@ -6,6 +6,7 @@ from .forms import CommentForm, PostForm
 from . import forms
 
 
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -94,3 +95,8 @@ class PostCreate(View):
             
 
         return render(request, 'postcreate.html', {'form': form})
+
+
+class DeletePostView(View):
+    def get(self, request):
+        return render(request, "delete_post.html")
