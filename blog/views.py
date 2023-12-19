@@ -85,8 +85,7 @@ class PostCreate(View):
         form = forms.PostForm()
         return render(request, "postcreate.html", {'form': form})
 
-    def post(self, request):
-        form = forms.PostForm(request.POST, request.FILES)
+    form = forms.PostForm(request.POST, request.FILES)= forms.PostForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.author = request.user
@@ -98,9 +97,9 @@ class PostCreate(View):
 
 class EditPost(View):
     def get(self, request, id):
+        form = forms.PostForm(request.POST, request.FILES)
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, id=id)
-
         return render(request, 'edit_post.html', {'form': form})
 
 
