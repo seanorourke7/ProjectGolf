@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
+import random
 
 
 choices = [
@@ -433,7 +434,8 @@ class Post(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(f'{self.course_name} {self.created_on}')
+        num = random.randint(10000, 10000000)
+        self.slug = slugify(num)
         super().save(*args, **kwargs)
 
 
