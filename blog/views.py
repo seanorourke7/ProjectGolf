@@ -16,9 +16,9 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
 
-    def get(self, request, id, *args, **kwargs):
+    def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, id=id)
+        post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -36,9 +36,9 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, id, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, id=id)
+        post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -105,9 +105,11 @@ class EditPost(View):
 
 
 class DeletePost(View):
-    def get(self, request, id):
+    def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, id=id)
-        post.delete()
-        return HttpResponseRedirect(reverse('home'))
+        post = get_object_or_404(queryset, slug=slug)
+        return render(request, 'delete_post.html')
 
+        if request.method == "POST":
+            post.delete()
+            return HttpResponseRedirect(reverse('home'))

@@ -1,20 +1,15 @@
 {% extends "base.html" %} {% block content %} 
 
-<h1>Delete Post</h1>
+<h2>Are you Sure you want to Delete this Post ?</h2>
 <br>
 <br>
-<h3>Delete: {{ post.slug }}</h3>
-<div>
-    <form method="POST">
-        {% csrf_token %}
-        <strong>
-            Are you sure ?
-        </strong><br>
-        <button class="btn btn-secondary">
-            Delete Post !</button>
-
-    </form>
+<form method="post" >
+    {% csrf_token %}
+    <input type="submit" value="delete" />
+    Your post will be deleted
+</form>
 
 </div>
 
 {%endblock%}
+
