@@ -122,7 +122,7 @@ The user can then edit the information and resubmit the form to the DB.
 
 Actual:
 
-Users are preseted with the previous form for editing and the edited information is submitted successfully to the DB.
+Users are presented with the previous form for editing and the edited information is submitted successfully to the DB.
 
 
 **Delete a Post**
@@ -138,7 +138,7 @@ Once clicked the post is removed from the DB and the user is redirected to the h
 
 Actual:
 
-Users are preseted with the delete button and when clicked the post is successfully deleted from the DB.
+Users are presented with the delete button and when clicked the post is successfully deleted from the DB and the user is redirected to the home page.
 
 **Navigation Links**
 
@@ -147,8 +147,8 @@ Testing was performed to ensure all navigation links on the respective pages, na
 - Home -> index.html
 - Logout -> logout.html
 - Register -> signup.html
-- Loging -> login.html
-- Post Title Name -> post_detail.html
+- Login -> login.html
+- Post Course Name -> post_detail.html
 - Create your own post -> postcreate.html
 - Delete post -> delete_post.html
 - Edit post -> edit_post.html
