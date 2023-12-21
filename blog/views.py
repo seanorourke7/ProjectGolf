@@ -6,7 +6,7 @@ from .forms import CommentForm, PostForm
 from . import forms
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import UserPassesTestMixin
+
 
 class PostList(generic.ListView):
     model = Post
@@ -82,7 +82,7 @@ class PostLike(View):
 
 
 class PostCreate(View):
-    def get(UserPassesTestMixin, self, request):
+    def get(self, request):
         form = forms.PostForm()
         return render(request, "postcreate.html", {'form': form})
 
@@ -97,15 +97,11 @@ class PostCreate(View):
 
 
 class DeletePost(View):
-    def get(UserPassesTestMixin, self, request, slug):
+    def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        if not post.author == request.user:
-            messages.error(request, 'Error, you are unauthorised to delete this post')
-            return redirect(reverse('home'))
-        else:    
-            post.delete()
-            return HttpResponseRedirect(reverse('home'))
+        post.delete()
+        return HttpResponseRedirect(reverse('home'))
 
 
 class EditPost(UpdateView):
