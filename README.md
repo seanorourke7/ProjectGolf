@@ -28,7 +28,6 @@ The live link can be found here:
   - [Testing](#testing)
   - [Bugs](#bugs)
   - [Credits](#credits)
-    - [Content](#content)
     - [Acknowledgments](#acknowledgments)
 
 ---
@@ -41,6 +40,8 @@ This project was developed using agile methodologies by delivering small feature
 
 All issues were prioritized under the labels, Must have, would like to have, and Bug. "Must have" stories were completed first, and then finally "would like to have". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
 
+There are still some "would like to have" issues left that I would like to impliment in future. 
+
 The Kanban board was created using github projects and can be located here and can be viewed to see more information on the project cards. 
 
 [Kanban Board](https://github.com/users/seanorourke7/projects/8)
@@ -50,6 +51,8 @@ The Kanban board was created using github projects and can be located here and c
 ### User Stories
 
 First time visitors will be greeted with a well layed out and interesting website. The most recent 6 blog posts will be visible on the home page and then a simple navigation tool allows further browsing. Each blog post will have a picture either uploaded by the author or by default.
+
+The user will be able to view the detail of each post by clicking on the name of the course. they will be taken to a page with the full blog post where they will see the review itself as well as the gross score and stableford score and the handicap and tees played off.
 
 Upon registering users will be able to like and comment on posts and even submit their own posts to the blog. 
 All comments and blog posts will be approved by Admin.
@@ -187,13 +190,14 @@ This blog is heavily based on the walkthrough project from code institute.
 
 Images are from pexels.com
 
-### Content
-
-The site was written by me and is for educational purposes only.
-
 ### Acknowledgments
 
-I didn't have a lot of time with this project as I work in retail and Christmas is the busiest time for me in work. I asked for an extension to allow me more time to impliment changes but I never got a response. 
+I realise this project may not be up to the standard that's most likely expected. 
+
+I didn't have a lot of time with this project as I work in retail and due to some staffing issues the run up to Christmas was extremely busy for me. I asked for an extension to allow me more time to impliment changes but as yet I haven't got a response. 
+
+There is a lot more I want to do with this project like add more detailed fields to the model and add more security. I would also like to style it better.
+the Readme and testing file are sparse as well but I haven't the time.
 
 My Mentor Graham helped a lot and the tutor support really helped as well. 
 
