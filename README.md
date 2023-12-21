@@ -43,7 +43,7 @@ All issues were prioritized under the labels, Must have, would like to have, and
 
 The Kanban board was created using github projects and can be located here and can be viewed to see more information on the project cards. 
 
-![Kanban Board](https://github.com/users/seanorourke7/projects/8)
+[Kanban Board](https://github.com/users/seanorourke7/projects/8)
 
 
 
@@ -109,7 +109,7 @@ I would like to add the ability to rate each course with stars. So each user can
 
 All images and links used have aria labels and lighthouse scores the site above 90%. 
 
-![Lighthouse](static/media/images/lighthouse.png)
+![Lighthouse](static/media/images/lighthousegolf.png)
 
 ## Technologies Used
 
