@@ -10,6 +10,7 @@ The live link can be found here:
 - [Seans Golf Adventures](#seans-golf-adventures)
   - [CONTENTS](#contents)
   - [User Experience (UX)](#user-experience-ux)
+  - [Agile Planning](#agile-planning)
     - [User Stories](#user-stories)
   - [Design](#design)
     - [Colour Scheme](#colour-scheme)
@@ -34,6 +35,18 @@ The live link can be found here:
 ---
 
 ## User Experience (UX)
+
+## Agile Planning
+
+This project was developed using agile methodologies by delivering small features in incremental steps. 
+
+All issues were prioritized under the labels, Must have, should have, could have and Bug. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
+
+The Kanban board was created using github projects and can be located here and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
+
+![Kanban Board](static/media/images/)
+
+
 
 ### User Stories
 

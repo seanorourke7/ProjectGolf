@@ -286,7 +286,8 @@ choices = [
     ('North West Golf Club', 'North West Golf Club'),
     ('Narin & Portnoo Golf Club', 'Narin & Portnoo Golf Club'),
     ('Newcastle West Golf Club', 'Newcastle West Golf Club'),
-    ('Nuremore Hotel Golf & Country Club', 'Nuremore Hotel Golf & Country Club'),
+    ('Nuremore Hotel Golf & Country Club',
+        'Nuremore Hotel Golf & Country Club'),
     ('Nenagh Golf Club', 'Nenagh Golf Club'),
     ('Newlands Golf Club', 'Newlands Golf Club'),
     ('New Ross Golf Club', 'New Ross Golf Club'),
@@ -304,6 +305,7 @@ choices = [
     ('Portmarnock Hotel & Golf Links', 'Portmarnock Hotel & Golf Links'),
     ('Portstewart - Strand Golf Club', 'Portstewart - Strand Golf Club'),
     ('Portadown Golf Club', 'Portadown Golf Club'),
+    ('Portlaoise Golf Club', 'Portlaoise Golf Club'),
     ('Portsalon Golf Club', 'Portsalon Golf Club'),
     ('Portumna Golf Club', 'Portumna Golf Club'),
     ('Portarlington Golf Club', 'Portarlington Golf Club'),
@@ -317,7 +319,8 @@ choices = [
     ('Royal Belfast Golf Club', 'Royal Belfast Golf Club'),
     ('Rathbane Golf Club', 'Rathbane Golf Club'),
     ('Roganstown Hotel & CC', 'Roganstown Hotel & CC'),
-    ('Royal County Down - Annesley Links', 'Royal County Down - Annesley Links'),
+    ('Royal County Down - Annesley Links',
+        'Royal County Down - Annesley Links'),
     ('Rathdowney Golf Club', 'Rathdowney Golf Club'),
     ('Rosapenna Golf Club', 'Rosapenna Golf Club'),
     ('Royal County Down - Championship Course',
@@ -406,13 +409,15 @@ choices = [
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Post(models.Model):
     course_name = models.CharField(
         max_length=200, choices=choices, default='Abbeyleix Golf Club')
     slug = models.SlugField(max_length=200, null=True,
                             blank=True, unique=True)
     author = models.ForeignKey(
-        User, default=None, on_delete=models.CASCADE, related_name="blog_posts")
+        User, default=None, on_delete=models.CASCADE,
+        related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     review = models.TextField()
@@ -423,7 +428,6 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    
 
     class Meta:
         ordering = ['-created_on']

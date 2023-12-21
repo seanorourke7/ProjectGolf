@@ -5,7 +5,7 @@
     <h3>Edit Your Post:</h3>
     <p>Posting as: {{ user.username }}</p>
 
-    <form method="post" enctype="multipart/form-data">
+    <form aria-label="edit post" method="post" enctype="multipart/form-data">
         {{ form.as_p }} {% csrf_token %}
         <input type="submit" value="Update" role="alert" />
        

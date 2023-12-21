@@ -93,7 +93,6 @@ class PostCreate(View):
             instance.author = request.user
             instance.save()
             return render(request, 'base.html')
-            
         return render(request, 'postcreate.html', {'form': form})
 
 
@@ -108,11 +107,6 @@ class DeletePost(View):
 class EditPost(UpdateView):
     model = Post
     template_name = 'edit_post.html'
-    fields = ['course_name', 'featured_image', 'review', 'handicap', 'tees_played_off', 'grossscore', 'stableford']
+    fields = ['course_name', 'featured_image', 'review',
+              'handicap', 'tees_played_off', 'grossscore', 'stableford']
     success_url = reverse_lazy('home')
-    
-    
-
-    
-
- 

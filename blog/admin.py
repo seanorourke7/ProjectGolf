@@ -5,7 +5,6 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-
     list_display = ('course_name', 'slug', 'status', 'created_on')
     search_fields = ['course_name', 'content']
     list_filter = ('status', 'created_on')
