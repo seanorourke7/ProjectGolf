@@ -85,30 +85,20 @@ class PostCreate(View):
         form = forms.PostForm()
         return render(request, "postcreate.html", {'form': form})
 
-    form = forms.PostForm(request.POST, request.FILES)
+    def post(self, request):
+        form = forms.PostForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
-            return render(request, 'index.html')
+            return render(request, 'base.html')
 
         return render(request, 'postcreate.html', {'form': form})
-
-
-class EditPost(View):
-    def get(self, request, id):
-        
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, id=id)
-        return render(request, 'edit_post.html', {'form': form})
 
 
 class DeletePost(View):
     def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        return render(request, 'delete_post.html')
-
-        if request.method == "POST":
-            post.delete()
-            return HttpResponseRedirect(reverse('home'))
+        post.delete()
+        return HttpResponseRedirect(reverse('home'))
