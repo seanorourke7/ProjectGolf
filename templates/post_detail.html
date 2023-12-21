@@ -8,16 +8,20 @@
         <h1 class="post-title">{{ post.course_name }}</h1>
         <!-- Post author goes before the | the post's created date goes after -->
         <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-       
       </div>
       <div class="d-none d-md-block col-md-6 masthead-image">
         <!-- The featured image URL goes in the src attribute -->
         {% if "placeholder" in post.featured_image.url %}
         <img
           src="https://res.cloudinary.com/dwej6pult/image/upload/v1702034135/background_golf_zhplqx.jpg"
-          width="100%" alt="image of a golf course">
+          width="100%"
+          alt="image of a golf course"
+        />
         {% else %}
-        <img src=" {{ post.featured_image.url }}" alt="image uploaded by the post author">
+        <img
+          src=" {{ post.featured_image.url }}"
+          alt="image uploaded by the post author"
+        />
         {% endif %}
       </div>
     </div>
@@ -31,21 +35,18 @@
         <!-- The post content goes inside the card-text. -->
         <!-- Use the | safe filter inside the template tags -->
         <p>{{ post.review | safe }}</p>
-        <p >Handicap Played off {{ post.handicap | safe }}</p>
-        <p >
-          Tees Played off {{ post.tees_played_off | safe }} 
-          
-        </p>
-        <p >Gross Score {{ post.grossscore | safe }}</p>
-        <p >Stableford Points {{ post.stableford | safe }}</p>
+        <p>Handicap Played off {{ post.handicap | safe }}</p>
+        <p>Tees Played off {{ post.tees_played_off | safe }}</p>
+        <p>Gross Score {{ post.grossscore | safe }}</p>
+        <p>Stableford Points {{ post.stableford | safe }}</p>
 
-        <div class="row">
-          <div class="col-1">
+        <div>
+          <div >
             <strong>
               {% if user.is_authenticated %}
               <form
                 class="d-inline"
-                action="{% url 'post_like' post.id %}"
+                action="{% url 'post_like' post.slug %}"
                 method="POST"
               >
                 {% csrf_token %} {% if liked %}
@@ -71,9 +72,8 @@
               {% else %}
               <span class="text-secondary"><i class="far-fa-heart"></i></span>
               {% endif %}
-              <span class="text-secondary">{{post.number_of_likes}} </span>
+              <span class="text-secondary"> {{post.number_of_likes}} </span>
             </strong>
-            <!-- The number of likes goes before the closing strong tag -->
             <strong class="text-secondary"
               ><i class="far fa-heart"></i> {{post.number_of_likes}}
             </strong>
@@ -82,9 +82,7 @@
             {% with comments.count as total_comments %}
             <strong class="text-secondary"
               ><i class="far fa-comments"></i>
-              <!-- Our total_comments variable goes before the closing strong tag -->
-              {{ total_comments }}</strong
-            >
+              {{ total_comments }}</strong>
             {% endwith %}
           </div>
         </div>
@@ -94,16 +92,18 @@
   <div>
     {% if user == post.author %}
 
-    
-    <a class="nav-link active" href="{% url 'delete_post' post.slug %}">Delete This Post </a>
-    <a class="nav-link active" href="{% url 'edit_post' post.slug %}">Edit This Post </a>
+    <a class="nav-link active" href="{% url 'delete_post' post.slug %}"
+      >Delete This Post
+    </a>
+    <a class="nav-link active" href="{% url 'edit_post' post.slug %}"
+      >Edit This Post
+    </a>
     {% endif %}
-    </div>
-
+  </div>
 
   <div class="row">
     <div class="col">
-      <hr>
+      <hr />
     </div>
   </div>
   <div class="row">
