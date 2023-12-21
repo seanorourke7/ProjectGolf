@@ -196,7 +196,7 @@ I realise this project may not be up to the standard that's most likely expected
 
 I didn't have a lot of time with this project as I work in retail and due to some staffing issues the run up to Christmas was extremely busy for me. I asked for an extension to allow me more time to impliment changes but as yet I haven't got a response. 
 
-There is a lot more I want to do with this project like add more detailed fields to the model and add more security. I would also like to style it better.
+There is a lot more I want to do with this project like add more detailed fields to the model and add more security. I need more authentication and I dont have any error 403/404/500 pages etc. I would also like to style it better.
 the Readme and testing file are sparse as well but I haven't the time.
 
 My Mentor Graham helped a lot and the tutor support really helped as well. 
