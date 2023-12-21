@@ -163,8 +163,13 @@ body {
         color: black;
 
 }
+
 #delete {
     text-decoration: none;
     color: black;
+}
 
+#about {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }

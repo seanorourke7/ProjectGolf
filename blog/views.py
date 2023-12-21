@@ -110,3 +110,5 @@ class EditPost(UpdateView):
     fields = ['course_name', 'featured_image', 'review',
               'handicap', 'tees_played_off', 'grossscore', 'stableford']
     success_url = reverse_lazy('home')
+
+
