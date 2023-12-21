@@ -8,6 +8,7 @@
         <h1 class="post-title">{{ post.course_name }}</h1>
         <!-- Post author goes before the | the post's created date goes after -->
         <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+       
       </div>
       <div class="d-none d-md-block col-md-6 masthead-image">
         <!-- The featured image URL goes in the src attribute -->
@@ -96,7 +97,8 @@
     
     <a href="{% url 'delete_post' post.slug %}">Delete This Post </a>
     <br>
-    
+    <a href="{% url 'edit_post' post.slug %}">Edit This Post </a>
+    <br>
     {% endif %}
     </div>
 

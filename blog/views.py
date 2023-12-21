@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
 from . import forms
-
+from django.views.generic import UpdateView
+from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -92,7 +93,7 @@ class PostCreate(View):
             instance.author = request.user
             instance.save()
             return render(request, 'base.html')
-
+            
         return render(request, 'postcreate.html', {'form': form})
 
 
@@ -102,3 +103,16 @@ class DeletePost(View):
         post = get_object_or_404(queryset, slug=slug)
         post.delete()
         return HttpResponseRedirect(reverse('home'))
+
+
+class EditPost(UpdateView):
+    model = Post
+    template_name = 'edit_post.html'
+    fields = ['course_name', 'featured_image', 'review', 'handicap', 'tees_played_off', 'grossscore', 'stableford']
+    success_url = reverse_lazy('home')
+    
+    
+
+    
+
+ 
