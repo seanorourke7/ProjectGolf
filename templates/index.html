@@ -62,20 +62,6 @@
   </nav>
   {% endif %}
 </div>
-<div class="row">
-  <div class="col-md-4 card mb-4 mt-3">
-    <div class="card-body">
-      {% if user.is_authenticated %}
-      <h3>
-        <a href="{% url 'postcreate' %}" id="createlink"
-          >Create your own Post : <i class="fa-solid fa-golf-ball-tee"></i
-        ></a>
-      </h3>
-
-      {% endif %}
-    </div>
-  </div>
-</div>
 <script
   src="https://kit.fontawesome.com/c5692d6d7a.js"
   crossorigin="anonymous"

@@ -158,6 +158,13 @@ body {
     color: green;
 }
 
-#logo {
-    background: url('https://res.cloudinary.com/dwej6pult/image/upload/v1702821589/logo_golf_vg1jg8.png');
+#edit {
+    text-decoration: none;
+        color: black;
+
+}
+#delete {
+    text-decoration: none;
+    color: black;
+
 }

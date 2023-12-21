@@ -40,6 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <li><a class="nav-link" href="{% url 'postcreate' %}" >Create your own Post : <i class="fa-solid fa-golf-ball-tee"></i></a></li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -93,6 +94,7 @@
             alert.close();
         }, 2500);
     </script>
+    <script src="https://kit.fontawesome.com/c5692d6d7a.js" crossorigin="anonymous"></script>
    
 </body>
 
