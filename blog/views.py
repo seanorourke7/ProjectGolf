@@ -7,12 +7,14 @@ from . import forms
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 
+# views for the home page
+
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-    paginate_by = 6
+    paginate_by = 3
 
 
 class PostDetail(View):
@@ -68,6 +70,8 @@ class PostDetail(View):
             },
         )
 
+# views for liking posts
+
 
 class PostLike(View):
 
@@ -79,6 +83,8 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+# view for creating a new post by the user
 
 
 class PostCreate(View):
@@ -95,6 +101,8 @@ class PostCreate(View):
             return HttpResponseRedirect(reverse('home'))
         return render(request, 'postcreate.html', {'form': form})
 
+# view for deleting posts by the user
+
 
 class DeletePost(View):
     def get(self, request, slug):
@@ -103,6 +111,8 @@ class DeletePost(View):
         post.delete()
         return HttpResponseRedirect(reverse('home'))
 
+# view for editing posts by the user
+
 
 class EditPost(UpdateView):
     model = Post
@@ -110,5 +120,3 @@ class EditPost(UpdateView):
     fields = ['course_name', 'featured_image', 'review',
               'handicap', 'tees_played_off', 'grossscore', 'stableford']
     success_url = reverse_lazy('home')
-
-

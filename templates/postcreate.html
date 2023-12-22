@@ -1,5 +1,7 @@
 {% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
 
+<!-- This calls the post for the user to create their own on the front end -->
+
 <div class="form-data">
   {% if user.is_authenticated %}
   <h3>Create A Post:</h3>

@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 import random
 
+"""List of Golf courses so the user can
+only choose whats on the list as a course name"""
 
 choices = [
     ('Abbeyleix Golf Club', 'Abbeyleix Golf Club'),
@@ -407,6 +409,8 @@ choices = [
 
 ]
 
+# Model for the main blog Post
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -438,11 +442,15 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+# Random number generated for slug
+
     def save(self, *args, **kwargs):
         num = random.randint(10000, 10000000)
         self.slug = slugify(num)
         super().save(*args, **kwargs)
 
+
+# comment model
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
