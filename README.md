@@ -185,7 +185,7 @@ The signup page is failing the W3C validator but as it's a direct import from Dj
 
 ## Credits
 
-This blog is heavily based on the walkthrough project from code institute. 
+This blog is heavily based on the walkthrough blog project from code institute. A lot of the standard code is used from this project. Like the structure of the blog and styling.  
 
 Images are from pexels.com
 
