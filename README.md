@@ -47,10 +47,9 @@ The Kanban board was created using github projects and can be located here and c
 [Kanban Board](https://github.com/users/seanorourke7/projects/8)
 
 
-
 ### User Stories
 
-First time visitors will be greeted with a well layed out and interesting website. The most recent 6 blog posts will be visible on the home page and then a simple navigation tool allows further browsing. Each blog post will have a picture either uploaded by the author or by default.
+First time visitors will be greeted with a well layed out and interesting website. The most recent 3 blog posts will be visible on the home page and then a simple navigation tool allows further browsing. Each blog post will have a picture either uploaded by the author or by default.
 
 The user will be able to view the detail of each post by clicking on the name of the course. they will be taken to a page with the full blog post where they will see the review itself as well as the gross score and stableford score and the handicap and tees played off.
 
