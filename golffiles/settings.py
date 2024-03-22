@@ -16,7 +16,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['projectgolf-537a6c2d3f19.herokuapp.com', 'localhost',
-                 '8000-seanorourke7-projectgolf-85uzeabvkw.us2.codeanyapp.com']
+                 '8000-seanorourke-projectgolf-675bg3pj2ph.ws-eu110.gitpod.io']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

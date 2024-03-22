@@ -70,12 +70,10 @@ class PostDetail(View):
             },
         )
 
-# views for liking posts
-
 
 class PostLike(View):
-
     def post(self, request, slug, *args, **kwargs):
+        # views for liking posts
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -84,11 +82,10 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-# view for creating a new post by the user
-
 
 class PostCreate(View):
     def get(self, request):
+        # view for creating a new post by the user
         form = forms.PostForm()
         return render(request, "postcreate.html", {'form': form})
 

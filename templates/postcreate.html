@@ -1,23 +1,22 @@
 {% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
 
 <!-- This calls the post for the user to create their own on the front end -->
-
 <div class="form-data">
   {% if user.is_authenticated %}
   <h3>Create A Post:</h3>
   <p>Posting as: {{ user.username }}</p>
-
-  <form aria-label="create a post" action="{% url 'postcreate' %}"
-    method="post"
-    enctype="multipart/form-data"
-  >
-    {{ form.as_p }} {% csrf_token %}
-    <input
-      type="submit"
-      value="Create"
-      
-      role="alert"
-    />Your post will be sent for approval</form>
+  <div class="container">
+    <div class="overlay">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <form aria-label="create a post" class="mt-6" action="{% url 'postcreate' %}" method="post" enctype="multipart/form-data">
+        {{ form|crispy }} {% csrf_token %}
+        <input type="submit" value="Submit" role="alert" />Your post will be sent for approval
+      </form>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 {% endif %} {%endblock%}
